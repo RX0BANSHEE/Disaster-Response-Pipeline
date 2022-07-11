@@ -1,5 +1,5 @@
 # Disaster-Response-Pipeline
-Disaster Response pipeline is a data ETL, processing, modeling project in Udacity Data Science Course. The raw dataset we will use contain 26k message in Twitter and contaent tag to help developer to distinguish message in right category. During this project, we will build a classifier model to help organizztions filter the most important message to rescure people who still in trouble.
+Disaster Response pipeline is a data ETL, processing, modeling project in Udacity Data Science Course. The raw dataset we will use contain 26k message in Twitter and content tag to help developer to distinguish message in right category (e.g. Water, Food, Hospitals, Aid-Related) during a disaster event. The app is based on Nature Language Processing and Random Forest Classifier ML model. 
 
 Inorder to accomplish this project, I used several packages which listed below:
 1.pandas

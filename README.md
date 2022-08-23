@@ -1,81 +1,92 @@
-# Disaster-Response-Pipeline
-Disaster Response pipeline is a data ETL, processing, modeling project in Udacity Data Science Course. The raw dataset we will use contain 26k message in Twitter and content tag to help developer to distinguish message in right category (e.g. Water, Food, Hospitals, Aid-Related) during a disaster event. The app is based on Nature Language Processing and Random Forest Classifier ML model. 
+# Disaster Response Web Application
 
-Inorder to accomplish this project, I used several packages which listed below:
-1.pandas
-2.numpy
-3.nltk (Bag of Words (BOW))
-4.sqlalchemy (SQLite in Python)
-5.sklearn (Grid Search Cross Validation Random Forest Classifier K nearest neighbors (KNN))
+*Disaster Response Web Application* is a Web app that can help emergency organizations analyze incoming messages and classify the messages into specific categories (e.g. Water, Food, Hospitals, Aid-Related) during a disaster event. The app is based on Nature Language Processing and Random Forest Classifier ML model. The data was collected by Figure Eight and provided by Udacity.
 
 
-# Data
+The techniques I used in this project include:
 
-The data files associated with this project are from Figure Eight
-
-messages.csv: FIgure Eight provide 26,248 messages
-categories.csv: Raw categories data, total 36 categories.
-
-# Project Process
-
-#1.ETL Pipeline
-
-Loads messages and categories dataset
-
-Clean data
-
-Feature Engineering
-
-Stores it in a SQLite database
+- SQLite in Python
+- Bag of Words (BOW)
+- Multilabel classification
+- Build Machine Learning Pipeline
+- Grid Search Cross Validation
+- Random Forest Classifier
+- K nearest neighbors (KNN)
+- Build a Flask web app 
 
 
 
+## Data
+The data files associated with this project are from [Figure Eight](https://www.figure-eight.com/dataset/combined-disaster-response-data/)
 
-#2.ML Pipeline
+- messages.csv: FIgure Eight provide 26,248 messages
+- categories.csv: Raw categories data, total 36 categories.
 
-Loads data from the SQLite database
+## Project Process
 
-text processing and machine learning pipeline
+1. ETL Pipeline
+    - Loads `messages` and `categories` dataset
+    - Clean data
+    - Feature Engineering
+    - Stores it in a SQLite database
 
-Trains and tunes a model using GridSearchCV
+2. ML Pipeline
+    - Loads data from the SQLite database
+    - text processing and machine learning pipeline
+    - Trains and tunes a model using GridSearchCV
+    - Exports the model
 
-Exports the model
-
-
-#3.Build web app
-
-Create HTML templates
-
-Build Flask web application
-
-
-
-- app
-| - template
-
-| |- master.html  # main page of web app
-
-| |- go.html  # classification result page of web app
-
-|- run.py  # Flask file that runs app
+3. Build web app
+    - Create HTML templates
+    - Build Flask web application
 
 
-- data
-- 
-|- disaster_categories.csv  # data to process 
 
-|- disaster_messages.csv  # data to process
+## Folder Structure
 
-|- process_data.py
+```
+├── README.md          
+│
+├── models                   <- Trained models and ML pipeline
+│   ├── classifier.pkl       <- Saved model
+│   └── train_classifier.py  <- Scripts to train model sdf
+│
+├── requirements.txt         <- File for reproducing the environment
+│
+├── data                     <- Raw and processed Data; data     
+│   │                           cleaning script
+│   ├── messages.csv         <- Raw messages data
+│   ├── categories.csv       <- Raw categories data
+│   ├── DisasterResponse.db  <- Saved processed data
+│   └── process_data.py      <- Scripts to process data
+│
+├── notebooks                <- Jupyter notebooks
+│
+└── App                      <- Source code for use in this project.
+    ├── templates            <- Flask html templates 
+    └── run.py               <- Scripts to create start Flask server. 
+```
 
-|- InsertDatabaseName.db   # database to save clean data to
+## Full Instructions
 
-- models
-|- train_classifier.py
+- Installation
+    Install Python 3.5+
+    Run ```pip install -r requirements.txt```
+- Prepare data
+    1. Clone or download the repo
+    2. Open terminal and navigate to the project folder
+    3. Run ```python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db```
+- Train model
+    5. Run ```python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl```
 
-|- classifier.pkl  # saved model 
+- Start Web app
+    6. Run ```cd app```
+    7. Run ```python run.py```
+    8. Open web browser and go to http://loclhost:3001 or http://0.0.0.0:3001
 
+## Screen Shot
 
-# Result Images
-![Message Genre Scatter Plot (Training)](https://user-images.githubusercontent.com/98485051/167718906-c80a5579-8c60-404e-8619-1129fc274a2f.png)
-![Result](https://user-images.githubusercontent.com/98485051/167719050-cd1e7c3f-c73a-4c7c-a21b-1491c50c13c7.png)
+![](newplot1.png)
+<!-- ![](newplot2.png) -->
+![](newplot3.png)
+--------

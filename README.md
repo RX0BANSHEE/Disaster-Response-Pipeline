@@ -90,7 +90,8 @@ The data files associated with this project are from [Figure Eight](https://www.
 
 ## Screen Shot
 
-![](newplot1.png)
-<!-- ![](newplot2.png) -->
-![](newplot3.png)
+![newplot1](https://user-images.githubusercontent.com/98485051/186044734-b49f5ef7-912e-4aec-8aa1-616c31e77355.png)
+![newplot2](https://user-images.githubusercontent.com/98485051/186044740-c514c8b2-4446-4f15-b593-ff61671e91cd.png)
+![newplot3](https://user-images.githubusercontent.com/98485051/186044750-2790733b-5bfd-43d5-bde0-c9836afdd278.png)
+
 --------
